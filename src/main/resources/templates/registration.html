@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Registration</title>
+    <h2 style = color:#3d57ff><p> Enter your login and password please, minimal
+        8 characters and not longer 32. </p></h2>
+
+    <div th:if="${problem != null}">
+        <h1 style = color:red>
+            <div th:text= "${problem}"></div>
+        </h1></div>
+
+
+</head>
+<body>
+<form th:action="@{/registration}" method="post">
+    <h2 style = color:#4dff2b> Enter login</h2>
+    <div><label> <input type="text" name="login"/> </label></div>
+    <h2 style = color:#54e2c7> Enter password</h2>
+    <div><label><input type="password" name="password"/> </label></div>
+    <input type="submit" value="Register">
+</form>
+</body>
+</html>

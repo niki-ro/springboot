@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title> Entrance </title>
+</head>
+<body>
+<div th:if="${message != null}">
+    <h2 style = color:#00ff37>
+        <div th:text= "${message}"></div>
+    </h2></div>
+
+<div th:if="${param.error}">
+    <h2 style = color:red>
+        Invalid login and password.
+    </h2></div>
+<div th:if="${param.logout}">
+    <h2 style = color:#66ff4b>
+        You have been sign out.
+    </h2></div>
+<form th:action="@{/login}" method="post">
+    <h2 style = color:mediumblue> Input login</h2>
+    <div><label> <input type="text" name="username"/> </label></div>
+    <h2 style = color:blueviolet> Input password</h2>
+    <div><label><input type="password" name="password"/> </label></div>
+    <div><input type="submit" value="Sign In"/></div>
+    <h4><p> Press here to <a th:href="@{/registration}">register</a></p></h4>
+</form>
+</body>
+</html>
